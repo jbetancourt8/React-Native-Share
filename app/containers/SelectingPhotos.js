@@ -10,7 +10,7 @@ import { photoSelectionChanged } from '../actions';
 import { connect } from 'react-redux';
 
 const { width } = Dimensions.get('window');
-const DEFAULT_ITEM_MARGIN = 14;
+const DEFAULT_ITEM_MARGIN = 16;
 const DEFAULT_ITEMS_PER_ROW = 2;
 const photoSize = Math.floor(width / DEFAULT_ITEMS_PER_ROW);
 
@@ -28,7 +28,7 @@ class SelectingPhotos extends Component {
     return(
       <View>
         <Image style={styles.imageSize} source={{ uri: this.props.uri }}>
-          <View style={{ position: 'relative' }}>
+          <View style={{ position: 'relative', backgroundColor: 'transparent' }}>
             <Icon name='square-o' size={35} />
           </View>
         </Image>
@@ -40,8 +40,9 @@ class SelectingPhotos extends Component {
     return(
       <View>
         <Image style={styles.imageSize} source={{ uri: this.props.uri }}>
-          <View style={{ position: 'relative' }}>
+          <View style={{ position: 'relative', backgroundColor: 'transparent' }}>
             <Icon name='check-square-o' size={35} />
+            <View style={{ position: 'relative' }} />
           </View>
         </Image>
       </View>
@@ -66,7 +67,7 @@ class SelectingPhotos extends Component {
 
     return(
       <View >
-        <TouchableOpacity onPress={this.photoPressed.bind(this)} style={styles.imageStyle}>
+        <TouchableOpacity onPress={this.photoPressed.bind(this)}>
           {checkedBox}
         </TouchableOpacity>
       </View>

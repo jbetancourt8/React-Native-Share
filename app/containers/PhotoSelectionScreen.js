@@ -62,7 +62,8 @@ class PhotoSelectionScreen extends Component {
 
 const styles = {
   containerStyle: {
-    alignSelf: 'flex-start'
+    alignSelf: 'flex-start',
+    padding: 2
   },
   boxStyle: {
     flex: 1,

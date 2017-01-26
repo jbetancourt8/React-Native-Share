@@ -6,8 +6,10 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-const { _, width } = Dimensions.get('window');
-const photoSize = Math.floor(width / 3);
+const { width } = Dimensions.get('window');
+const DEFAULT_ITEM_MARGIN = 14;
+const DEFAULT_ITEMS_PER_ROW = 2;
+const photoSize = Math.floor(width / DEFAULT_ITEMS_PER_ROW);
 
 class SelectedPhotos extends Component {
   getDefault() {
@@ -20,7 +22,7 @@ class SelectedPhotos extends Component {
     const uri = this.props.uri;
 
     return(
-      <View>
+      <View style={{ padding: 1 }}>
         <Image style={styles.imageSize} source={{ uri }} />
       </View>
     );
@@ -38,9 +40,9 @@ class SelectedPhotos extends Component {
 
 const styles = {
   imageSize: {
-    width: photoSize,
-    height: photoSize
+    width: photoSize - DEFAULT_ITEM_MARGIN,
+    height: photoSize - DEFAULT_ITEM_MARGIN
   }
 };
 
-export default SelectedPhotos; 
+export default SelectedPhotos;

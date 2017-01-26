@@ -38,7 +38,9 @@ class PhotoSection extends Component {
     const { uri, share } = rowData;
 
     return (
-      <SelectedPhotos uri={uri} share={share} />
+      <View style={styles.containerStyle}>
+        <SelectedPhotos uri={uri} share={share} />
+      </View>
     );
   }
 
@@ -74,6 +76,7 @@ class PhotoSection extends Component {
 
 const styles = {
   containerStyle: {
+    alignSelf: 'flex-start'
   },
   listStyle: {
     flexDirection: 'row',
