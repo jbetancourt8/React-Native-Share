@@ -7,7 +7,7 @@
 
 ### Containers
 
-- ShareScreen
+- ShareScreen:
 - ContactSection
 - PhotoSection
 - SelectedContacts
